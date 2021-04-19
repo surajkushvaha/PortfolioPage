@@ -1,0 +1,298 @@
+    /*
+    notes for my refrence 
+==================================================================
+ Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  
+ A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+
+ I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+
+ 1200px / 16px = 75em 
+ 980px / 16px = 61.25em
+======================================================================
+ */
+    
+    body {
+        margin: 0;
+        background-color: black;
+        color: antiquewhite;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    a {
+        text-decoration: none;
+        color: gray;
+    }
+    /* 
+    -----------------------------------------------------------
+    navbar section
+    ----------------------------------------------------------- */
+    
+    #navigation {
+        display: flex;
+        flex-wrap: wrap;
+        position: fixed;
+        background-color: black;
+        color: white;
+        top: 0;
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 600;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 4px 8px rgb(70, 70, 70);
+    }
+    
+    #title-name {
+        padding-left: 2em;
+        font-size: x-large;
+        font-weight: 800;
+    }
+    
+    #navbar {
+        padding-right: 2em;
+    }
+    
+    ul {
+        display: flex;
+        list-style-type: none;
+        flex-direction: row;
+    }
+    
+    li {
+        padding: 10px;
+    }
+    
+    @media (max-width: 480px) {
+        #navigation {
+            justify-content: center;
+        }
+        #navbar {
+            padding: 0;
+        }
+        #title-name {
+            text-align: center;
+            padding: 0;
+        }
+        ul {
+            align-items: center;
+            padding: 0;
+        }
+    }
+    /*------------------------------------------------------
+    navbar section end
+    --------------------------------------------------------*/
+    /*------------------------------------------------------
+    about section start
+    --------------------------------------------------------*/
+    
+    #about {
+        display: block;
+        text-align: center;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin: 1em;
+        padding-top: 75px;
+    }
+    
+    #education {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #education i {
+        padding: 1em;
+    }
+    
+    .info {
+        text-align: left;
+    }
+    
+    #skills i {
+        padding: 1em;
+    }
+    /*------------------------------------------------------
+    about section end
+    --------------------------------------------------------*/
+    /*------------------------------------------------------
+    welcome section start
+    --------------------------------------------------------*/
+    
+    #welcome-section {
+        display: grid;
+        align-content: center;
+        text-align: center;
+        height: 100vh;
+    }
+    
+    #welcome-section h1 {
+        font-size: 4em;
+        margin: 0;
+    }
+    
+    #welcome-section h4 {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    #welcome-section span {
+        font-size: 1.2em;
+        font-weight: 500;
+        margin: 0;
+    }
+    /*------------------------------------------------------
+    welcome section end
+    --------------------------------------------------------*/
+    /*------------------------------------------------------
+   project section start
+    --------------------------------------------------------*/
+    
+    #projects {
+        display: block;
+        text-align: center;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin: 1em;
+        padding-top: 75px;
+    }
+    
+    img {
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    
+    .projectbox {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .project-tile {
+        box-shadow: 0px 4px 8px rgba(70, 70, 70, 0.338);
+        border-radius: 5px;
+        margin: 2em;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .project-tile:hover {
+        box-shadow: 0px 4px 8px rgb(70, 70, 70);
+    }
+    
+    #seeall {
+        box-shadow: none;
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+    
+    #seeall:hover {
+        box-shadow: 0px 4px 8px rgb(70, 70, 70);
+    }
+    
+    @media (max-width: 650px) {
+        .projectbox {
+            grid-template-columns: auto auto;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .projectbox {
+            grid-template-columns: auto;
+        }
+        #projects {
+            padding-top: 110px;
+        }
+    }
+    /*------------------------------------------------------
+    project section end
+    --------------------------------------------------------*/
+    /*------------------------------------------------------
+    contact section start
+    --------------------------------------------------------*/
+    
+    #contacts {
+        display: block;
+        text-align: center;
+        border: 1px solid gray;
+        margin: 1em;
+        border-radius: 5px;
+    }
+    
+    .contactbox {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    
+    .contact-tile {
+        margin: 5em;
+        padding: 1em;
+    }
+    
+    i {
+        color: antiquewhite;
+        font-size: 2em;
+        padding-bottom: 5px;
+    }
+    
+    .contact-tile:hover {
+        box-shadow: 0px 4px 8px rgb(70, 70, 70);
+    }
+    
+    @media (max-width: 650px) {
+        .contactbox {
+            grid-template-columns: auto auto;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .contactbox {
+            grid-template-columns: auto;
+        }
+        .contact-tile {
+            margin: 0;
+        }
+    }
+    
+    .contact {
+        text-align: left;
+        padding: 2em;
+        border: 1px medium rgb(112, 112, 112);
+    }
+    
+    .contact:hover {
+        box-shadow: 0px 0px 15px rgb(112, 112, 112);
+    }
+    /*------------------------------------------------------
+    contact section end
+    --------------------------------------------------------*/
+    /*------------------------------------------------------
+    footer section start
+    --------------------------------------------------------*/
+    
+    #footer {
+        text-align: center;
+        color: antiquewhite;
+        border: 1px solid gray;
+        margin: 1em;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    /*------------------------------------------------------
+    footer section end
+    --------------------------------------------------------*/
